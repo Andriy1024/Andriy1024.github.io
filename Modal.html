@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Модальні і немодальні вікна</h1></center>
+        <br>
+        <p>Клас QDialog є базою для всіх діалогових вікон, представлених у класовій херургії Qt. Хоча діалогове вікно можна створювати за допомогою будь-якого іншого widget, зробивши його виходом верхнього рівня, тим не менше, зручніше скористатися класом QDialog, який надає ряд можливостей, необхідних всім діалоговым вікнам. Диалогові вікна підрозділяються на дві групи:</p>
+        <p> - модальні;</p>
+        <p> - немодальні.</p>
+        <p>Режим модальності і немодального можна встановити і дізнатися за допомогою методів QDialog :: setModal () і QDialog :: isModal () відповідно.</p>
+        <p>При установці true відповідає модальному режиму, a false - немодальному.</p>
+        <h2>Модальні діалогові вікна</h2>
+        <p>Такі вікна зазвичай використовуються для виведення важливих повідомлень. Наприклад, є помилки, на які користувач повинен відреагувати, перш ніж продовжити працювати з додатком. Модальні вікна переривають роботу програми і для продовження його роботи таке вікно має бути закрите.</p>
+        <p>У цих випадках модальний діалог - ідеальний засіб для звернення уваги користувача на себе.</p>
+        <p>Для блокування програми запускається цикл події тільки для діалогового вікна, а події клавіатури, миші та інших елементів програми просто ігноруються. Цей цикл запускається викликом слота exec (), який повертає значення цілого типу після закриття діалогового вікна. Це значення інформує про кнопці і може приймати значення QDialog :: Accepted або QDialog :: Rejected, відповідні кнопках Ok і Cancel (Скасувати). Типовим прикладом модального вікна є нагадування користувачеві, перед закриттям програми, про необхідність збереження документа. У момент відображення цього вікна можливість роботи з самим додатком повинна бути заблокована. Принцип виклику модального діалогового вікна приблизно наступний:</p>
+        <p><ex class="ex">&nbsp;&nbsp; MyDialog* pdlg = new MyDialog(&data); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; if (pdlg->exec() == QDialog::Accepted) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; // Користувач вибрав Accepted &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; // Отримати дані для подальшого аналізу і обробки &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; Data data = pdlg->getData(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; ... &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; delete pdlg; &nbsp;&nbsp;</ex></p>
+        <h2>Немодальні діалогові вікна</h2>
+        <p>Немодальні діалогові вікна поводяться як нормальні віджети, не перериваючи, зі своєю появою, роботу додатка. На перший погляд може здатися, що застосування немодального діалогових вікон має більше сенсу, так як в цьому випадку користувач має більше свободи в своїх діях. Але, насправді, більшість додатків потребує зупинці і очікуванні рішення користувача для відновлення своїх подальших дій.</p>
+        <p>Немодального вікно може бути відображено за допомогою методу show (), також як і для звичайного віджета. Метод show () не повертає ніяких значень і не зупиняє виконання всієї програми. Метод hide () дозволяє зробити вікно невидимим. Цим властивістю можна скористатися, і в цьому випадку не потрібно створювати кожен раз об'єкт діалогового вікна, а при закритті видаляти його з пам'яті. Можна обмежитися викликом методів show () і hide (), що дасть можливість відобразити діалогове вікно, на тому ж місці, на якому воно було згорнуто. Немодальні діалогові вікна необхідно постачати кнопкою Close (Закрити) для того, щоб дати можливість користувачу закрити його.</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

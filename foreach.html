@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Конструкція foreach</h1></center>
+        <br>
+        <p>Якщо ви хочете перебрати всі елементи контейнера по порядку, то можете використовувати конструкцію Qt foreach. Дана конструкція - це доповнення Qt до мови C ++, реалізоване за допомогою засобів препроцесора.</p>
+        <p><ex class="ex">&nbsp;&nbsp;  cout &lt;&lt; "Помилка №" &lt;&lt; i &lt;&lt; " - на 0 ділити неможна!!!!" &lt;&lt; endl; &nbsp;&nbsp;</ex></p>
+        <p>Її синтаксис :: foreach (змінна, контейнер) оператор. У наступному прикладі показано використання конструкції foreach для перебору всіх елементів контейнера QLinkedList QString>:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QLinkedList&lt;QString> list; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; ... &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QString str; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (str, list) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; str; &nbsp;&nbsp;</ex></p>
+        <p>Код з конструкцією foreach значно коротше, ніж аналогічний код, який використовує ітератори:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QLinkedList&lt;QString> list; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; ... &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QLinkedListIterator&lt;QString> i(list); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; while (i.hasNext()) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; i.next(); &nbsp;&nbsp;</ex></p>
+        <p>За винятком типу даних, що містить кому (наприклад, QPair &lt;int, int>), змінна, яка використовується для перебору елементів контейнера може бути визначена всередині виразу foreach:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QLinkedList&lt;QString> list; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (QString str, list) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;&nbsp;&nbsp; qDebug() &lt; str; &nbsp;&nbsp;</ex></p>
+        <p>І подібно до будь-якого циклу C ++, ви можете укласти тіло циклу foreach в фігурні дужки і використовувати break для переривання циклу:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QLinkedList&lt;QString> list; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (QString str, list) { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; if (str.isEmpty()) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; break; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt; str; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>При використанні з QMap і QHash, foreach надає доступ до парам значень (key, value). Якщо ви хочете перебрати і ключі і значення, то можете використовувати ітератори (які швидше) або написати код, подібний наступного:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QMap&lt;QString, int> map; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (QString str, map.keys()) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;&nbsp;&nbsp; qDebug() &lt;&lt; str &lt;&lt; ":" &lt;&lt; map.value(str); &nbsp;&nbsp;</ex></p>
+        <p>Для багатозв'язних карт:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QMultiMap&lt;QString, int> map; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (QString str, map.uniqueKeys()) { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; foreach (int i, map.values(str)) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; str &lt;&lt; ":" &lt;&lt; i; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>При вході в цикл foreach, Qt автоматично робить копію контейнера. Якщо ви зміните контейнер під час виконання циклу, то в циклі цього не буде помітно. (Якщо ви не змінювали контейнер, копіювання все ще має місце, але, завдяки неявному спільному використанню даних, копіювання контейнера здійснюється дуже швидко.)</p>
+        <p>На додаток до foreach, Qt також надає псевдоключевое слово forever, для нескінченного циклу:</p>
+        <p><ex class="ex">&nbsp;&nbsp; forever { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; ... &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Якщо вас турбує засмічення простору імен, то ви можете відключити використання цих макросів, додавши в .pro-файл такий рядок:</p>
+        <p><ex class="ex">&nbsp;&nbsp; CONFIG += no_keywords &nbsp;&nbsp;</ex></p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

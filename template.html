@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+             <center><h1>Шаблони функцій в С++</h1></center>
+        <br>
+        <p>
+Шаблони функцій, своїми словами,- Це інструкції, згідно з якими створюються локальні версії шаблованої функції для певного набору параметрів і типів даних.</p>
+         <p>Насправді, шаблони функцій -це потужний інструмент у С , який значно спрощує роботу програміста. Наприклад, нам потрібно запрограмувати функцію, яка виводила б на екран елементи масиву. Завдання не складне! Але, щоб написати таку функцію, ми повинні знати тип даних масиву, який будемо виводити на екран. І тут нам говорять – тип даних не один, ми хочемо, щоб функція виводила масиви типу int, double, float і char.</p>
+         <p>Як виявилося, завдання ускладнилося. І тепер ми розуміємо, що нам потрібно запрограмувати цілих 4 функції, які виконують одні й ті ж дії, але для різних типів даних. Так як ми ще не знайомі з шаблонами функцій, ми поступимо так: скористаємося перевантаженням функцій.</p>
+         <p><ex class="ex">&nbsp;&nbsp; // перевантаження функції printArray для виведення масиву на екран &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; void printArray(const int * array, int count) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; for (int ix = 0; ix < count; ix++) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; array[ix] &lt;&lt; "   "; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp;  cout &lt;&lt; endl; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; void printArray(const double * array, int count) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; for (int ix = 0; ix < count; ix++) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; array[ix] &lt;&lt; "   "; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; endl; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+         <p>Таким чином, ми маємо 4 перевантажені функції, для різних типів даних. Як бачите, вони відрізняються тільки заголовком функції, тіло у них абсолютно однакове. Я написав один раз тіло функції для типу int і три рази його скопіював для інших типів даних.</p>
+         <p>І, якщо запустити програму з цими функціями, то вона буде справно працювати. Компілятор сам визначатиме яку функцію використовувати при виклику.</p>
+         <p>Як бачите, коду вийшло досить багато, як для такої простої операції. А що якщо, нам знадобиться запрограмувати алгоритм сортування у вигляді функції. Виходить, що для кожного типу даних доведеться свою функцію створювати. Тобто, самі розумієте, що один і той же код буде в кількох примірниках, нам це ні до чого. Тому в С придуманий такий механізм - шаблони функцій.</p>
+         <p>Ми створюємо один шаблон, в якому описуємо всі типи даних. Таким чином вихідний код НЕ БУДЕ захаращуватися нікому не потрібними рядками коду. Нижче розглянемо приклад програми з шаблоном функції. Отже, згадаємо умову: “запрограмувати функцію, яка виводила б на екран елементи масиву”.</p>
+         <p><ex class="ex">&nbsp;&nbsp; #include "stdafx.h" &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; #include &lt;iostream> &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; #include &lt;cstring> &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; using namespace std; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; // шаблон функциї printArray &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; template &lt;typename T> &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; void printArray(const T * array, int count) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; for (int ix = 0; ix &lt; count; ix++) &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; array[ix] &lt;&lt; "   "; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; endl; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; } // кінець шаблону функції printArray &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; int main() &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; // розміри масивів&nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; const int iSize = 10,dSize = 7; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; // масиви різних типів даних&nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; int    iArray[iSize] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; double dArray[dSize] = {1.2345, 2.234, 3.57, 4.67876, 5.346, 6.1545, 7.7682}; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt;"\t\t Шаблон функції виведення масиву на екран\n\n"; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; // виклик локальної версії функції printArray для типу int через шаблон &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; "\nМассив типу int:\n"; printArray(iArray, iSize); &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; //виклик локальної версії функції printArray для типу double через шаблон &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; cout &lt;&lt; "\nМассив типу double:\n"; printArray(dArray, dSize); &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; return 0; &nbsp;&nbsp;</ex></p>
+         <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+         <p>Всі шаблони функцій починаються зі слова template, після якого йдуть кутові дужки, в яких перераховується список параметрів. Кожному параметру повинно передувати зарезервоване слово class або typename.</p>
+         <p><ex class="ex">&nbsp;&nbsp; template &lt;class T> &nbsp;&nbsp;</ex></p>
+            <p>або</p>
+         <p><ex class="ex">&nbsp;&nbsp; template &lt;typename T> &nbsp;&nbsp;</ex></p>
+            <p>або</p>
+         <p><ex class="ex">&nbsp;&nbsp; template &lt;typename T1, typename T2> &nbsp;&nbsp;</ex></p>
+         <p>Ключове слово typename говорить про те, що в шаблоні буде використовуватися вбудований тип даних, такий як: int, double, float, char і т. д. А ключове слово class повідомляє компілятору, що в шаблоні функції як параметр будуть використовуватися для користувача типи даних, тобто класи.</p>
+         <p>Шаблони функцій також можна перевантажувати іншими шаблонами функцій, змінивши кількість переданих параметрів у функцію. Ще однією особливістю перевантаження є те, що шаблонні функції можуть бути перевантажені зазвичай не шаблонними функціями. Тобто вказується те ж саме ім'я функції, з тими ж параметрами, але для певного типу даних, і все буде коректно працювати.</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

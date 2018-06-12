@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>QFile і файли. Читання і запис рядків у файл.</h1></center>
+        <br>
+        <p>На сьогоднішній день переважна більшість комп'ютерних програм працюють з файлами, а тому важливо вміти користуватися функціями або класами, які дозволяють відкривати і закривати, записувати і зчитувати інформацію з файлів. У цій статті я трохи розповім про файлах і про клас QFile, а також покажу приклад використання цього класу.</p>
+        <h2>Файл, повні і відносні імена файлів</h2>
+        <p>Файл - це іменована область даних, яка зберігається на накопичувачі інформації. Тобто зрозуміло, що на накопичувачі є ділянка пам'яті, який містить послідовність біт, у цієї ділянки є своє унікальне ім'я (приклад: /home/nick/Desktop/file.txt або C: \\ Downloads \ file.txt - це повні імена файлів). На ім'я можна звертатися до цієї ділянки пам'яті.</p>
+        <p>Існує таке поняття, як відносне ім'я файлу. Відносне ім'я файлу не містить повного шляху до нього. Його ім'я по відношенню до поточної робочої директорії, наприклад з якої запущена програма, яка працює з файлами.</p>
+        <p> . - це посилання, яка містить адресу на поточну директорію</p>
+        <p> .. — это ссылка, которая содержит адрес на предыдущую директорию</p>
+        <p>Якщо ми хочемо звернутися до файлу /text.txt, перебуваючи в директорії / etc /, то необхідно писати ../text.txt</p>
+        <p>Якщо до файлу в поточному каталозі, то text.txt або ./text.txt</p>
+        <p>Зазвичай, коли говорять про ім'я файлу, то мають на увазі ту частину, де опущений повний шлях до нього, тобто просто file.txt. Шлях до файлу і повне ім'я файл поняття взаємозамінні.</p>
+        <p>Більш детальну інформацію про файлах можна знайти в мережі.</p>
+        <h2>QFile і приклади використання</h2>
+        <p>Клас QFile успадковує клас QIODevice, який для роботи з файлами надає методи: відкриття і закриття файлів, для запису і читання з файлу, для створення і видалення файлів.</p>
+        <p>Щоб створити об'єкт для роботи з файлом, потрібно передати в конструктор ім'я файлу.</p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile file("myfile.txt"); &nbsp;&nbsp;</ex></p>
+        <p>Можна не передавати ім'я файлу в конструктор, а встановити його в об'єкті методом setName ().</p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile file; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  file.setName("myfile.txt"); &nbsp;&nbsp;</ex></p>
+        <p>Часто при роботі з файлами потрібно дізнатися, чи відкритий файл. Метод QIODevice :: isOpen () повертає значення true, якщо файл відкритий і false в іншому випадку. А так як QFile успадкований від нього, то ми можемо перевірити, чи відкритий файл.</p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile file("myfile.txt"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  if(file.isOpen) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; "File is open"; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Для закриття файлу потрібно викликати метод QFile :: close ()</p>
+        <p><ex class="ex">&nbsp;&nbsp; file.close(); &nbsp;&nbsp;</ex></p>
+        <p>Зверніть увагу, що дані відразу не записуються в файл на накопичувачі, вони записуються в буфер в оперативній пам'яті. Після закриття файлу дані з буфера записуються в файл на носії. Це зроблено для того, щоб не навантажувати жорсткий диск або будь-який інший тип накопичувача, на якому знаходиться файл. Інформацію з буфера в файл можна записати примусово без закриття файлу, викликавши метод QFile :: flush ()</p>
+        <p><ex class="ex">&nbsp;&nbsp; file.flush() &nbsp;&nbsp;</ex></p>
+        <p>Існує дуже корисний метод QFile :: exists (). Він приймає на вхід рядок з ім'ям файлу і повертає значення true, якщо такий файл існує. Існує статичний і нестатичних методи. Для роботи зі статичним методом необхідно вказати ім'я файлу.</p>
+        <p><ex class="ex">&nbsp;&nbsp; if(QFile::exists("myfile.txt")) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; "Файл существует"; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Для роботи з нестатичних досить просто його викликати.</p>
+        <p><ex class="ex">&nbsp;&nbsp; if(file.exists()) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; "Файл существует"; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Для можливості запису або читання необхідно відкрити файл із зазначенням прапора читання QIODevice :: ReadOnly або записи QIODevice :: WriteOnly. Приклад відкриття файлу для запису:</p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile file("myfile.txt"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; if (!file.open(QIODevice::WriteOnly)) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; qDebug() &lt;&lt; "Ошибка при открытии файла"; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Є різні способи читання з фалів і записи. Можна вважати або записати всю інформацію за один раз, а можна по одному символу або блоками.</p>
+        <p>Для прикладу напишемо програму, яка зчитує з файлу блок з перших 10-ти символів, а потім вставляє в інший файл.</p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QCoreApplication> &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QFile> // Підключаємо для роботи з класом QFile QFile &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; int main(int argc, char *argv[]) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QCoreApplication a(argc, argv); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile fileIn("filein.txt");  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile fileOut("fileout.txt"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; if(fileIn.open(QIODevice::ReadOnly) && fileOut.open(QIODevice::WriteOnly)) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { // Якщо перший файл відкритий для читання, а другий для запису успішно &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QByteArray block = fileIn.read (10); // Прочитуємо 10 байт в масив block з filein.txt &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  fileOut.write(block); // Записуємо 10 байт в файл fileout.txt &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; fileIn.close(); // Закриваємо filein.txt &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;   fileOut.close(); // Закриваємо fileout.txt  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  return a.exec(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Я создал файл filein.txt и внёс в него произвольный текст с помощью текстового редактора. После запуска программы я открыл filein.txt и fileout.txt в текстовом редакторе.</p>
+        <br><center><img src="images/file1.png"></center><br>
+        <p>Можна було вважати все байти, тоді весь вміст першого файлу копіювалося в другій. Для повного зчитування рядок</p>
+        <p><ex class="ex">&nbsp;&nbsp; QByteArray block = fileIn.read(10); &nbsp;&nbsp;</ex></p>
+        <p>Потрібно замінити на рядок</p>
+        <p><ex class="ex">&nbsp;&nbsp; QByteArray block = fileIn.readAll(); &nbsp;&nbsp;</ex></p>
+        <p>В результаті програма вважає все байти в масив block, а після запише їх у другій файл.</p>
+        <p>Ми можемо записувати інформацію в файл рядками, для цього його потрібно відкрити в текстовому режимі.</p>
+        <p><ex class="ex">&nbsp;&nbsp; fileOut.open(QIODevice::WriteOnly | QIODevice::Text); &nbsp;&nbsp;</ex></p>
+        <p>Після передати адресу в конструктор нового об'єкта класу QTextStream.</p>
+        <p><ex class="ex">&nbsp;&nbsp; QTextStream writeStream(&fileOut); &nbsp;&nbsp;</ex></p>
+        <p>А далі за допомогою оператора << посилати рядки в потік записи.</p>
+        <p>Приклад програми, в яка записує в файл fileout.txt рядок «Text, text, text.»</p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QCoreApplication> &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QFile> // Підключаємо клас QFile &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QTextStream> // Підключаємо клас QTextStream&nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; int main(int argc, char *argv[]) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QCoreApplication a(argc, argv); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QFile fileOut("fileout.txt"); // Зв'язуємо об'єкт з файлом fileout.txt &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;   if(fileOut.open(QIODevice::WriteOnly | QIODevice::Text))  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  {// Якщо файл успішно відкритий для запису в текстовому режимі &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QTextStream writeStream (& fileOut); // Створюємо об'єкт класу QTextStream &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; // і передаємо йому адресу об'єкта fileOut &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  writeStream &lt;&lt; "Text, text, text."; // Надсилаємо рядок в потік для запису &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; fileOut.close (); // Закриваємо файл &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; return a.exec (); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Вміст fileout.txt після запуску програми</p>
+        <br><center><img src="images/file2.png"></center><br>
+        <h2>Запис в кінець файлу</h2>
+        <p>Попередній метод повністю перезаписував дані у файлі, тобто очищав весь його вміст і записував нові дані. Перезапису можна уникнути і записувати нові дані в кінець файлу.</p>
+        <p>Прапор QIODevice :: Append поміщає покажчик для запису (seek) в кінець файлу, в результаті вхідний потік записується відразу після наявною інформацією в файлі. Приклад фрагмента використання:</p>
+        <p><ex class="ex">&nbsp;&nbsp;  fileOutf .open(QIODevice::Append | QIODevice::Text); &nbsp;&nbsp;</ex></p>
+        <p>У прикладі замість QIODevice :: WriteOnly використовується QIODevice :: Append. Якщо зробити таку зміну в попередній програмі, то після декількох запусків у файлі fileout.txt буде зберігатися рядок</p>
+        <p>Text, text, text.Text, text, text.Text, text, text.</p>
+        <p>Отже, ми розглянули основні методи для роботи з файлами. Більш детальну інформацію про всі методи класу QFile і QIODevice можна знайти в офіційній документації Qt і в мережі.</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

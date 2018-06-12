@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+      <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Перегрузка операторів в С++</h1></center>
+        <br>
+        <p>Іноді хочеться проявити творчість і полегшити програмний код для себе і для інших. Для себе написання, для інших розуміння. Скажімо, якщо в нашій програмі часто зустрічається функція додавання одного рядка в кінець інший, звичайно, можна це реалізувати різними способами. А якщо ми, в якійсь ділянці нашого коду, напишемо, наприклад так:</p>
+        <p><ex class="ex">&nbsp;&nbsp; char str1[15] = "Hello "; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; char str2[] = "world!"; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; str1 + str2; &nbsp;&nbsp;</ex></p>
+        <p>I в результаті отримаємо рядок «Hello world!». Правда, було б чудово? Ну так будь ласка! Сьогодні ви навчитеся «пояснювати» комп'ютера, що оператором + ви хочете скласти не два числа, а два рядки. І робота з рядками - це один з найбільш вдалих, на мій погляд, прикладів, щоб почати розбиратися з темою «Перевантаження операторів».</p>
+        <p>Приступимо до практики. У цьому прикладі ми перевантажимо оператор + і змусимо його до одного рядка дописувати вміст якого іншого рядка. А саме: ми зберемо з чотирьох окремих рядків частина відомого всім нам вірша О.С.Пушкіна. Раджу відкрити вашу середовище розробки і переписати цей приклад. Якщо вам не все буде зрозуміло в коді, не хвилюйтеся, нижче будуть наведені докладні пояснення.</p>
+        <p><ex class="ex">&nbsp;&nbsp; 1. #include &lt;iostream>  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 2. #include &lt;string.h>  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 3. using namespace std;  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 4. class StringsWork  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 5. {  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 6. private: &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 7.  char str[256];//рядок, яка доступна класу&nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 8. public: &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 9. StringsWork()//конструктор в якому очистимо рядок класу від сміття &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 10. { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 11.  for(int i = 0; i &lt; 256; i++)  str[i] = '\0'; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 12. } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 13. void operator +(char*);//прототип методу класу в якому ми перевантажимо оператор + &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 14. void getStr();//метод виведення даних на екран &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 15. }; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 16. void StringsWork::operator +(char *s) //що повинен виконати оператор+ &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 17. { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 18. strcat(str, s); //складання рядків &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 19. } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 20. void StringsWork::getStr() &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 21. { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 22. cout &lt;&lt; str &lt;&lt; endl &lt;&lt; endl;//висновок символьного масиву класу на екран &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 23. } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 24. int main() &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 25. { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 26. setlocale(LC_ALL, "ukr"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 27. char *str1 = new char [strlen("У Лукомор'я дуб зелений;\n")+1]; //виділимо пам'ять для рядків &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 28. char *str2 = new char [strlen("Все ходить по ланцюгу навколо;\n")+1];&nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 29. char *str3 = new char [strlen("І вдень і вночі кіт учений\n")+1]; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 30. char *str4 = new char [strlen("І золотий ланцюг на дубі тому:\n")+1]; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 31. strcpy(str1,"У Лукомор'я дуб зелений;\n");//ініціалізуємо &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 32. strcpy(str2,"Все ходить по ланцюгу навколо;\n"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 33. strcpy(str3,"І вдень і вночі кіт учений\n"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 34. strcpy(str4,"І золотий ланцюг на дубі тому:\n"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 35. cout &lt;&lt; "1) " &lt;&lt; str1; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 36. cout &lt;&lt; "2) " &lt;&lt; str2; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 37. cout &lt;&lt; "3) " &lt;&lt; str3; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 38. cout &lt;&lt; "4) " &lt;&lt; str4 &lt;&lt; endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 39. StringsWork story;//створюємо об'єкт і добавяем в нього рядки з допомогою переобтяженого + &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 40. story + str1; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 41. story + str4; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 42. story + str3; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 43. story + str2; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 44. story.getStr(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 45. delete [] str4;//звільнимо пам'ять&nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 46. delete [] str3; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 47. delete [] str2; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 48. delete [] str1; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 49. return 0; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; 50. } &nbsp;&nbsp;</ex></p>
+        <p>Pозберемося:</p>
+        <p>Что-то новое в коде мы увидели в строке 13 void operator +(char*);  Тут мы объявили прототип метода класса в котором перегрузим наш оператор +.  Чтобы перегрузить оператор необходимо использовать зарезервированное слово operator. Выглядит это так, словно вы определяете обычную функцию: void operator+ () {//код} В теле этой функции мы размещаем код, который покажет компилятору, какие действия будет выполнять оператор + (или какой-либо другой оператор). Перегруженный оператор будет выполнять указанные  для него действия  только в пределах того класса, в котором он определен. Ниже, в строках 16 — 19 мы уже  определяем какую роль будет играть  + в нашем классе. А именно, с помощью функции   strcat(str, s);  он будет дописывать содержимое строки s , которую мы передали по указателю, в конец строки str.  Строки 14, 20 — 23 это обычный метод класса, с помощью которого строка класса будет показана на экран. Если вам не понятно, как  определять методы класса вне тела класса, т.е. такой момент как void StringsWork::getStr() {//определение}, то вам сначала желательно сходить сюда. Далее, уже  в главной функции main(), в строках 27 — 30,создаем четыре указателя на строки и выделяем необходимое количество памяти для каждой из них, не забывая о том, что для символа '\0' так же надо зарезервировать одну ячейку char *str1 = new char [strlen("текст")+1];. Затем копируем  в них текст с помощью функции strcpy()  и показываем их на экран —  строки 31 — 38. А в строке 39 создаем объект класса. При его создании сработает конструктор класса и строка класса будет очищена от лишних данных. Теперь нам остается только сложить строки в правильной последовательности, используя перегруженный оператор + — строки 40 — 43 и посмотреть, что получилось — строка 44.</p>
+        <h2>Обмеження перевантаження операторів</h2>
+        <p>перевантажити можна практично будь-який оператор, за винятком таких:</p>
+        <p>. крапка (вибір елемента класу);</p>
+        <p>* Зірочка (визначення або розіменування покажчика);</p>
+        <p>:: подвійна двокрапка (область видимості методу);</p>
+        <p>?: Знак питання з двокрапкою (тернарний оператор порівняння);</p>
+        <p># Дієз (символ препроцесора);</p>
+        <p>## подвійний дієз (символ препроцесора);</p>
+        <p>sizeof оператор знаходження розміру об'єкта в байтах;</p>
+        <p>за допомогою перевантаження неможливо створювати нові символи для операцій;</p>
+        <p>перевантаження операторів не змінює порядок виконання операцій і їх пріоритет;</p>
+        <p>унарний оператор не може використовуватися для перевизначення бінарної операції так само, як і бінарний оператор не перевизначити унарна операцію.</p>
+        <p>Не забувайте, що в програмуванні дуже бажано, робити все можливе, щоб ваш код був якомога більш зрозумілим. Цей принцип стосується всього: назв, які ви даєте змінним, функціям, структурам, класам, також і тих дій, які буде виконувати перевантажений оператор. Намагайтеся визначати ці дії, як можна ближче до логічного значення операторів. Наприклад + для додавання рядків або інших об'єктів класу, - для видалення рядка і т.д.</p>
+        <p>Не можна не відзначити, що багато програмістів негативно ставляться до перевантаження операторів. Сама можливість перевантаження операторів надана для полегшення розуміння і читання коду програм. У той же час, вона навпаки може стати і причиною ускладнення вашої програми і багатьом програмістам буде важко її зрозуміти. Пам'ятайте про «золоту середину» і використовуйте перевантаження тільки тоді, коли вона реально принесе користь вам та іншим. Цілком можна обійтися і без перевантаження операторів. Але це не означає, що можна проігнорувати цю тему. У ній слід розібратися хоча б тому, що вам колись доведеться зіткнутися з перевантаженням в чужому коді і ви зможете легко розібратися що до чого.</p>
+        <p>Ось ми дуже коротко ознайомилися з перевантаженням операторів в С ++. Побачили, так би мовити, вершину айсберга. А вашим домашнім завданням (ДА-ДА - домашнє завдання!) Буде доопрацювати програму, додавши в неї перевантаження оператора для видалення рядка. Який оператор перевантажувати виберіть самі. Або запропонуйте свій варіант апгрейда коду, додавши в нього те, що вважаєте за потрібне і цікавим. Ваші «праці» можете додавати в коментарі до цієї статті. Нам цікаво буде подивитися ваші варіанти вирішення. Успіхів!</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

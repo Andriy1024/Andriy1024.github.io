@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Віджети та компонування</h1></center>
+        <br>
+        <h2>Віджети</h2>
+        <p>Віджети - це вихідні елементи для створення призначеного для користувача інтерфейсу в Qt. Віджети можуть відображати дані та інформацію про стан, отримати введення від користувача і надавати контейнер для інших віджетів, які повинні бути згруповані. Віджет, що не вбудований в батьківський віджет, називається вікном.</p>
+        <p>Клас QWidget надає базову можливість для відтворення на екрані і для обробки подій для користувача введення. Всі елементи призначеного для користувача інтерфейсу, що надаються Qt, є підкласами QWidget або використовуються в поєднанні з підкласом QWidget. Створення призначених для користувача віджетів виконується успадкуванням від QWidget або відповідного підкласу і перевизначення віртуальних обробників подій.</p>
+        <h2>Компонування</h2>
+        <p>Компонування - елегантний і гнучкий спосіб для автоматичного розміщення дочірніх віджетів всередині контейнера. Кожен віджет повідомляє компонувальнику свої вимоги до розміру за допомогою властивостей sizeHint і sizePolicy, а компоновщик відповідно розподіляє обсяг пам'яті, доступний.</p>
+        <p>Qt Designer - потужний інструмент для інтерактивного створення та розміщення віджетів в компоновках.</p>
+        <h2>Стилі віджета</h2>
+        <p>Стилі малюють від імені віджетів і інкапсулюють зовнішній вигляд і поведінку графічного призначеного для користувача інтерфейсу. Вбудовані віджети Qt використовують його для виконання майже всіх операцій малювання, гарантуючи схожість з аналогічними рідними віджетами.</p>
+        <p>Таблиці стилів Qt - потужний механізм, який дозволяє настроювати зовнішній вигляд віджетів, на додаток до того, що вже доступний за допомогою створення підкласів QStyle.</p>
+        <h2>Основні віджети</h2>
+        <p>Основні віджети (елементи управління), наприклад, кнопки, списки, що випадають і смуги прокрутки, спроектовані для безпосереднього використання.</p>
+        <p>QCheckBox - Прапорець з текстовою міткою</p>
+        <p>QComboBox - Поєднання кнопки і спливаючого списку</p>
+        <p>QCommandLinkButton - Командна кнопка-посилання в стилі Vista</p>
+        <p>QDateEdit - Віджет для редагування дати, заснований на віджеті QDateTimeEdit</p>
+        <p>QDateTimeEdit - Віджет для редагування дати та часу</p>
+        <p>QDial - Елемент управління, проградуйований по колу (на зразок спідометра або потенціометра)</p>
+        <p>QDoubleSpinBox - Віджет лічильника, яка приймає значення з плаваючою точкою</p>
+        <p>QFocusFrame - Рамка фокуса, яка може відображатися навколо стандартної області перемальовування віджета</p>
+        <p>QFontComboBox - Список, що випадає, який дозволяє користувачеві вибрати сімейство шрифтів</p>
+        <p>QLCDNumber - Показує число за допомогою цифр, що імітують ЖК-індикатор</p>
+        <p>Label - Відображає текст або малюнок</p>
+        <p>QLineEdit - Однорядковий редактор тексту</p>
+        <p>QMenu - Віджет меню, який використовується в панелі меню, контекстного меню та інших спливаючих меню</p>
+        <p>QProgressBar - Горизонтальний або вертикальний індикатор виконання</p>
+        <p>QPushButton - командна кнопка</p>
+        <p>QRadioButton - Радіокнопка з текстовою міткою</p>
+        <p>QScrollArea  - Область прокрутки на іншому віджеті</p>
+        <p>QScrollBar - Вертикальна або горизонтальна смуга прокрутки</p>
+        <p>QSizeGrip - Область захоплення для зміни розміру вікна верхнього рівня</p>
+        <p>QSlider - Вертикальний або горизонтальний повзунок (slider)</p>
+        <p>QSpinBox - Віджет лічильника</p>
+        <p>QTabBar - Картотека для використання, наприклад, в діалогах з вкладками</p>
+        <p>QTabWidget - Стек віджетів з вкладками</p>
+        <p>QTimeEdit - Віджет для завдання часу, заснований на віджеті QDateTimeEdit</p>
+        <p>QToolBox  - Вертикальний набір елементів віджетів з вкладками</p>
+        <p>QToolButton - Кнопка швидкого доступу до команд або налаштувань, зазвичай використовується в QToolBar</p>
+        <p>QWidget - Базовий клас для всіх об'єктів інтерфейсу користувача</p>
+        <h2>Pозширені віджети</h2>
+        <p>Розширені віджети ДПІ, наприклад, віджети зі складками і індикатори виконання, надають більш складні елементи управління призначеним для користувача інтерфейсом.</p>
+        <p>QCalendarWidget - Віджет помісячного календаря, що дозволяє користувачеві вибрати дату</p>
+        <p>QColumnView - Реалізація ідеї модель / подання до вигляді постолбцового уявлення</p>
+        <p>QDataWidgetMapper - Відображення області даних моделі на віджети</p>
+        <p>QDesktopWidget - Доступ до інформації про екран в багатоекранний системах</p>
+        <p>QListView - Подання списку або піктограм в моделі</p>
+        <p>QMacCocoaViewContainer - Віджет для Mac OS X, який може використовуватися для обгортання довільних уявлень Cocoa (тобто підкласів NSView) і вставки їх в ієрархії Qt</p>
+        <p>QMacNativeWidget - Виджет для Mac OS X, который предоставляет способ помещения виджетов Qt в иерархии Carbon или Cocoa, в зависимости от того, как Qt была сконфигурирована</p>
+        <p>QTableView - Реалізація за замовчуванням моделі / подання таблиці</p>
+        <p>QTreeView - Реалізація моделі / уявлення за замовчуванням для представлення дерева</p>
+        <p>QUndoView - Показує вміст QUndoStack</p>
+        <p>QWSEmbedWidget - Надає можливість вбудовувати віджети верхнього рівня в Qt для вбудованих Linux-систем</p>
+        <p>QWebView - Віджет, який використовується для перегляду і редагування веб-документів</p>
+        <p>QX11EmbedContainer - Віджет-контейнер XEmbed</p>
+        <p>QX11EmbedWidget - Віджет-клієнт XEmbed</p>
+        <p>Phonon::VideoWidget - Віджет, який використовується для відображення відео</p>
+        <h2>Віджети упорядкування</h2>
+        <p>Такі класи, як роздільники, панелі вкладок, групи кнопок і т.д. використовуються для впорядкування і угруповання примітивів ДПІ в більш складних додатках і діалогах.</p>
+        <p>QButtonGroup - Контейнер для управління групою віджетів-кнопок</p>
+        <p>QGroupBox - Рамка з заголовком для панелі-контейнера</p>
+        <p>QSplitter - Реалізує віджет-роздільник</p>
+        <p>QSplitterHandle - Обробка функціональності роздільник</p>
+        <p>QStackedWidget - Стек віджетів, в якому в один момент видно тільки один віджет</p>
+        <p>QTabWidget - Стек віджетів з вкладками</p>
+        <h2>Абстрактні класи віджетів</h2>
+        <p>Абстрактні класи віджетів є базовими класами. Вони не використовуються в якості самостійних класів, але надають функціональність при створенні їх спадкоємців.</p>
+        <p>QAbstractButton - Абстрактний базовий клас віджета кнопки, який реалізує загальні функції кнопок</p>
+        <p>QAbstractScrollArea - Прокручувати область з смугами прокрутки, відображеними на вимогу</p>
+        <p>QAbstractSlider - Ціле значення з діапазону</p>
+        <p>QAbstractSpinBox - Лічильник і рядок редагування для відображення значення лічильника</p>
+        <p>QDialog - Базовий клас для діалогових вікон</p>
+        <p>QFrame - Базовий клас для віджетів, здатних мати рамку</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

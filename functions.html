@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Функції у C++</h1></center>
+        <br>
+        <h2>Об’явлення та визначення функцій</h2>
+        <p>Функція – це іменована послідовність операторів, що виконує якунебудь закінчену дію. Функція може одержувати параметри і повертати єдине значення. Будь-яка функція в програмі повинна бути об’явлена і визначена. Об’явлення функції повинне бути зроблено до її виклику, щоб компілятор міг правильно обробити її параметри.</p>
+        <p>Визначення функції (прототип функції) задає її ім'я, тип значення, що повертається, і список одержуваних параметрів. Після визначення слідує тіло функції – складений оператор, що містить оператори, які визначають дію функції.</p>
+        <p>Формат визначення функції: </p>
+        <p><ex class="ex">&nbsp;&nbsp;тип ім'я_функції(список_параметрів)  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;{тіло функції  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;return значення}  &nbsp;&nbsp;</ex></p>
+        <p>Тип значення, що повертається функцією може бути будь-яким, крім масиву і функції (але може бути вказівником на масив або функцію). Якщо функція не повинна повертати значення, то вона повинна мати тип void.</p>
+        <p>Список_параметрів визначає величини, що потрібно передати у функцію при її виклику. Елементи списку параметрів розділяються комами. Для кожного параметра вказується його тип і ім'я.</p>
+        <p>У визначенні, в оголошенні і при виклику однієї і тієї ж функції типи і порядок слідування параметрів повинні збігатися.
+        Для виклику функції потрібно вказати її ім'я, а за ним у круглих дужках – імена переданих аргументів (через кому). Виклик функції може розташовуватися в будь-якому місці програми. Виключення – функція типу void не може входити до складу виражень або розташовуватися в правій частині оператора присвоювання.</p>
+        <p>Усі величини, описані у функції, а також її параметри являються локальними. Їхня область дії обмежена межами цієї функції. При виході з функції значення локальних змінних губляться. Якщо цього потрібно уникнути, при описі локальних змінних використовується модифікатор static.</p>
+        <h2>Обмін даними між функціями</h2>
+        <p>Обмін даними між функціями може виконуватися наступними шляхами:</p>
+        <p>1) за допомогою глобальних змінних;</p>
+        <p>2) через значення, що повертається.</p>
+        <p>3) через параметри;</p>
+        <h2>Глобальні змінні</h2>
+        <p>Глобальні змінні доступні усередині будь-якої функції, де немає однойменних локальних змінних. Але їх використовувати не рекомендується, тому що це утрудняє налагодження і робить функцію залежною від іншої програми (неможливість виділити функцію в окрему бібліотеку).</p>
+        <p>Значення, що повертається. Повернення з функції в точку її виклику здійснюється оператором:</p>
+        <p><ex class="ex">&nbsp;&nbsp; return вираження; &nbsp;&nbsp;</ex></p>
+        <p>У функції може бути декілька операторів return. Якщо функція описана як void, вираження не вказується (може навіть бути відсутнім і оператор return).</p>
+        <p>Вираження, зазначене в операторі return неявно перетвориться до типу значення, що повертається функцією, і передається в точку виклику. Забороняється повертати з функції вказівник на локальну змінну, тому що пам'ять, виділена циєї змінної при виході з функції звільняється.</p>
+        <h2>Параметри функції</h2>
+        <p>Параметри, зазначені в заголовку при описі функції являються формальними. Параметри, задані при виклику функції, називаються фактичними (аргументами).</p>
+        <p>Способи передачі параметрів у функцію:</p>
+        <p>1) за значенням;</p>
+        <p>2) за адресою (по посиланню).</p>
+        <p>При передачі за значенням функція одержує копії значень параметрів.</p>
+        <p>Можливість змінити самі параметри відсутня. При передачі за адресою функція одержує адреси аргументів. При цьому функція може змінити значення аргументів. Якщо потрібно заборонити зміну параметра усередині функції, використовується модифікатор const.</p>
+        <p>Код програми 1: Функція для обміну двох цілих чисел.</p>
+        <p><ex class="ex">&nbsp;&nbsp;#include &lt;iostream.h>  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; void swap(int &x, int &y) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;&nbsp; int z; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;z=x; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;x=y; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;y=z; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; void main() &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  &nbsp;int a=20,b=40;&nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"Значення до обміну"&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"a="&lt;&lt;a&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"b="&lt;&lt;b&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;swap(a,b); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"Значення після обміну"&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"a="&lt;&lt;a&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; &nbsp;cout&lt;&lt;"b="&lt;&lt;b&lt;&lt;endl; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Примітка – Аргумент може передаватися або як вказівник, або як посилання. При передачі по посиланню усередині функції при звертанні до параметра неявно виконується операція розіменування. При використанні вказівника програміст повинний явно задавати операцію розіменування.</p>
+        <h2>Рекурсія</h2>
+        <p>Рекурсія – це здатність функції викликати саму себе.</p>
+        <p>Пряма рекурсія – коли функція викликає сама себе безпосередньо.</p>
+        <p>Непряма рекурсія – коли функція викликає себе через іншу функцію.<br>Для нормального завершення будь-яка рекурсивна функція повинна містити хоча б одну нерекурсивну галузь, що закінчується оператором повернення.</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

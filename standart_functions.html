@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Стандартні функції у C++</h1></center>
+        <br>
+        <h2>Математичні функції</h2>
+        <p>У мові С++ визначено безліч різноманітних функцій, які істотно розширюють можливості мови. Існують такі класи  функцій :</p>
+        <p>- функції вводу – виводу; </p>
+        <p>- математичні; </p>
+        <p>- функції роботи з часом та датою; </p>
+        <p>- функції роботи  з стрічками; </p>
+        <p>- функції обробки помилок;</p>
+        <p>- та інші. </p>
+        <p>Для  використовування  всіх  математичних  функцій  в  програму  необхідно 
+включити заголовок &lt;math.h>. </p>
+        <p>Ці підпрограми виконують математичні обчислення і перетворення. </p>
+        <p>abs   (x)- обчислює  абсолютне значення цілого числа; </p>
+        <p>acos (x) - обчислює  арккосинус;</p>
+        <p>asin (x) - обчислює  арксинус; </p>
+        <p>atan (x) - обчислює  арктангенс; </p>
+        <p>complex   (x)  - створює комплексні числа; </p>
+        <p>cos  (x) - обчислює  косинус; </p>
+        <p>cosh (x) - обчислює  гіперболічний косинус; </p>
+        <p>exp  (x) - функція експоненти, повертає значення в cтепені x; </p>
+        <p>fabs (x) - обчислює  абсолютне значення числа з плаваючою    крапкою; </p>
+        <p>ceil (x) - округлення; </p>
+        <p>pow  (x,y) - обчислює x в степені y; </p>
+        <p>pow10(x) - обчислює  10 у степені x;</p>
+        <p>rand (x)  - генератор випадкових чисел; </p>
+        <p>floor (x) - округлення в меншу сторону; </p>
+        <p>fmod (x,y) - обчислює  x по модулю y, тобто залишок від ділення    на ціло  x/y;</p>
+        <p>labs  (x)- обчислює  абсолютне значення довгого цілого числа;</p>
+        <p>log   (x)- обчислює  натуральний логарифм;</p>
+        <p>log10(x)- обчислює  десятковий логарифм; </p>
+        <p>real   (x) - повертає дійсну частину комплексного числа, або перетворить число з двійково-десяткового кодування в float, double або long;</p>
+        <p>sin (x) - обчислює синус; </p>
+        <p>sinh (x) - обчислює  гіперболічний синус; </p>
+        <p>sqrt (x) - обчислює  квадратний корінь; </p>
+        <p>srand (x) - ініціалізація генератора випадкових чисел; </p>
+        <p>tan (x) - обчислює  тангенс кута. </p>
+        <h2>Функції  дати та часу </h2>
+        <p>Бібліотека  С++  містить  функції  для  роботи  з  часом  та  датою. Прототипи функцій знаходяться у файлі time.h.</p>
+        <p>Функції роботи з часом в  С++  представляють  час    двома  способами.    Перший  –  це  кількість секунд  з 1 січня 1970 року. Для представлення часу раніше використовуються від’ємні значення. Значення представляються типом long int. В файлі time.h за допомогою  ключового    typedef  визначені  символьні  імена  time_t  i  clock_t  з значенням  long.  Другий  спосіб  –  представлення  часу,    розбитого  на  частини: рік,  місяць,  день  і  т.д.  Це  представлення  використовує  структуру  tm,  яка визначена  у файлі time.h. </p>
+        <p>Одержання текучого часу </p>
+        <p>Для  отримання  текучого  часу    з  внутрішнього  таймера    ПК  використовується функція time(). ЇЇ прототип має вигляд:</p>
+        <p><ex class="ex">&nbsp;&nbsp; time_t time (time_t  *timeptr);  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; Наприклад,  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; time_t  n; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; n=time(0); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; Змінна n  буде містити текучий час. &nbsp;&nbsp;</ex></p>
+        <p>Відображення часу на екрані </p>
+        <p>Для перетворення  часу в форматовані стрічки використовуються функції 
+ctime() та asctime(). Обидві функції  повертають час у вигляді стрічки . ctime() 
+приймає час у вигляді аргумента типу time_t , а asctime() приймає час у вигляді 
+аргумента типу tm. </p>
+        <p>Вони мають наступний прототип: </p>
+        <p><ex class="ex">&nbsp;&nbsp; char *ctime(time_t * ptr  );  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; char asctime (struct tm * ptr  );  &nbsp;&nbsp;</ex></p>
+        <p>Визначення різниці часу </p>
+        <p>Різниця  між  двома  моментами  часу  в  секундах  обчислюється 
+за допомогою функції difftime (). Прототип функції: </p>
+        <p><ex class="ex">&nbsp;&nbsp; double difftime (time_t  k, time_t p);  &nbsp;&nbsp;</ex></p>
+        <p>Функція  обчислює  різницю  k  i  p  та  повертає  кількість 
+секунд між двома моментами часу. </p>
+        <h2>Функції випадкового числа </h2>
+        <p>Розглянемо оператор. </p>
+        <p><ex class="ex">&nbsp;&nbsp; А=rand(); &nbsp;&nbsp;</ex></p> 
+        <p>Функція  rand  генерує  ціле  значення  в  діапазоні  від  0  до  RAND_MAX 
+(символьна  константа,  яка  визначає  в  файлі  заголовку  &lt;stdlib.h>  ).  Стандарт 
+ANSI оголошує, що значення RAND_MAX повинно дорівнювати 32767, тобто 
+потрібно певні задачі. </p>
+        <p>Функція rand генерує насправді псевдовипадкові числа. При виклику rand 
+генерується  послідовність  чисел,  які  виглядають  випадковими.  Однак,  ця 
+послідовність  повторюється  при  кожному  новому  виконанні  програми.  Дану 
+програму можна модифікувати для генерації різних послідовностей випадкових 
+чисел для кожного виконання. Це називається рандомізацією і забезпечується 
+функцією  стандартної  бібліотеки  srand.  Функція  srand  отримує  для  аргумента 
+ціле без знака (тип unsigned), яке дозволяє отримати різні послідовності чисел 
+при кожному виконанні програми. </p>
+        <p>Для  читання  даних  типу  unsigned  функцією  scanf  використовується 
+специфікація  перетворення  %u.  Прототип  функції  для  srand  знаходиться  в 
+&lt;stdlib.h> </p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>

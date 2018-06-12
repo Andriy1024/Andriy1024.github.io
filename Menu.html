@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++/Qt</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fonts/font.css">
+    <link href="images/Qt2.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+ <div id="site">
+    <div id="header">
+        <div class="logo"><center><a href="C++.html"  name="C++" title="C++"><img src="images/logo_c.svg" class="logoimg"></a></center></div>
+        <div class="logo2"><center><a href="Qt.html"  name="Qt" title="Qt"><img src="images/logo_qt.png" class="logoimg2"></a></center></div>
+        <div class="title"><center><a href="index.html"  name="main" title="Головна"><img src="images/title.png" class="titleimg"></a></center></div>
+        
+    </div>
+    <div id="content">
+        <div id="menu3">
+            <ul>
+                <li><a href="type.html">Типи даних</a>
+                </li>
+                <li><a href="operators.html">Оператори й операції</a>
+                </li>
+                <li><a href="managing_structures.html">Керуючі структури</a>
+                </li>
+                <li><a href="cycle.html">Цикли</a>
+                </li>
+                <li><a href="functions.html">Функції</a>
+                </li>
+                <li><a href="standart_functions.html">Стандартні Функції</a>
+                </li>
+                <li><a href="array.html">Масиви []</a>
+                </li>
+                <li><a href="ptr.html">Вказівники *, Силки&</a>
+                </li>
+                <li><a href="string.html">Робота зі стрічками</a>
+                </li>
+                <li><a href="struct.html">Структури</a>
+                </li>
+                <li><a href="dynamic_struct.html">Динамічні Структури даних</a>
+                </li>
+                <li><a href="fstream.html">Робота з файлами(Fstream)</a>
+                </li>
+                <li><a href="template.html">Шаблони функцій</a>
+                </li>
+                <li><a href="clases.html">ООП Класи</a>
+                </li>
+                <li><a href="constructors.html">Конструктор і деструктор</a>
+                </li>
+                <li><a href="peregruzka.html">Перегрузка операцій</a>
+                </li>
+                <li><a href="nasliduvanya.html">Наслідування</a>
+                </li>
+                <li><a href="virtual.html">Віртуальні функції</a>
+                </li>
+                <li><a href="exception.html">Винятки</a>
+                </li>
+                <li><a href="stl.html">STL</a>
+                </li>
+            </ul>
+       </div>
+        <div id="menu4">
+            <ul>
+                <li><a href="qt_creator.html">Qt Creator</a>
+                </li>
+                <li><a href="Widgets.html">Віджети та компонування</a>
+                </li>
+                <li><a href="comp.html">Класи компонування</a>
+                </li>
+                <li><a href="Modul.html">Модулі Qt</a>
+                </li>
+                <li><a href="qt_designer.html">Знайомство з Qt Designer</a>
+                </li>
+                <li><a href="signals.html">Сигнали и слоти</a>
+                </li>
+                <li><a href="mainwindow.html">Класи главного вікна</a>
+                </li>
+                </li>
+                <li><a href="dialog.html">Діалогові вікна</a>
+                </li>
+                <li><a href="Modal.html">Модальні немодальні вікна</a>
+                </li>
+                <li><a href="Menu.html">Створення меню в Qt</a>
+                </li>
+                <li><a href="qfile.html">Робота з файлами</a>
+                </li>
+                <li><a href="qdata.html">Клас дати QDate</a>
+                </li>
+                <li><a href="qtime.html">Клас часу QTime</a>
+                </li>
+
+                <li><a href="conteiner.html">Контейнери в Qt</a>
+                </li>
+                <li><a href="iterator.html">Ітератори</a>
+                </li>
+                <li><a href="foreach.html">Конструкція foreach</a>
+                </li>
+                <li><a href="Webkit.html">QtWebKit Guide</a>
+                </li>
+                <li><a href="sql.html">Модуль QtSql</a>
+                </li>
+                <li><a href="paint.html">Система малювання</a>
+                </li>
+                <li><a href="test.html">Тестування в Qt</a>
+                </li>
+            </ul>
+       </div> 
+        <div id="wrapper">
+            <center><h1>Створення меню в Qt</h1></center>
+        <br>
+        <p>Меню є важливою і невід'ємною частиною практично будь-якої програми. Воно знаходиться у верхній частині головного вікна програми і являє собою секцію для розташування великої кількості команд, з яких користувач може вибирати потрібну. У додатках використовуються меню чотирьох основних типів:</p>
+        <p> - меню верхнього рівня;</p>
+        <p> - спливаюче меню;</p>
+        <p> - відривний меню, яке можна відокремлювати</p>
+        <p> - від основного;</p>
+        <p> - контекстне меню.</p>
+        <p>У бібліотеці Qt меню реалізується класом QMenu. Цей клас визначено в заголовки QMenu. Основне призначення класу - це розміщення команд в меню. Кожна команда представляє об'єкт дії (клас QAction). Всі дії і саме меню можуть бути з'єднані зі слотами для виконання відповідного коду при виборі команди користувачем.</p>
+        <p>Наприклад, якщо користувач виділив команду меню, то і меню, і об'єкти дій висилають сигнал hovered (), і якщо вам потрібно зробити в цей момент будь-які дії, то їх потрібно з'єднати з відповідним слотом.</p>
+        <h2>Анатомія меню. Класи QMenu і QMenuBar</h2>
+        <p>Користувачеві буде легше звикнути до роботи з новою програмою, якщо її меню буде схоже на меню інших програм. На малюнку показані складові типового меню.</p>
+        <br><center><img src="images/menu.png"></center><br>
+        <p>Основний відправною точкою меню є меню верхнього рівня. Воно являє собою меню з постійно видимим набором команд, які, в свою чергу, можуть бути обрані за допомогою покажчика миші або клавіш клавіатури (&lt;Alt> і клавіші курсора). Команди меню верхнього рівня призначені для відображення меню, що випадають, тому їх не слід використовувати для інших цілей, так як це може неабияк спантеличити користувача. Намагайтеся логічно групувати команди і об'єднувати їх в одному випадаючому меню, яке, в свою чергу, буде викликатися при виборі відповідної команди верхнього меню. Клас QMenuBar відповідає за меню верхнього рівня і визначено в заголовки QMenuBar.</p>
+        <p>"Гарячі" клавіші інформують користувача про комбінації клавіш, за допомогою якої виконується той же дію, що і при виборі відповідної команди меню. Наприклад, для відображення вікна About Q&lt; (Про Qt), в прикладі, показаному на малюнку, використовується комбінація клавіш &lt;Ctrl> + &lt;Q>. Намагайтеся використовувати стандартні комбінації для "гарячих" клавіш.</p>
+        <p>По можливості, для всіх пунктів меню повинні бути визначені клавіші швидкого виклику. Це дозволить користувачеві вибирати команди не тільки за допомогою миші, але і за допомогою клавіатури, натиснувши підкреслену букву (в назві команди) спільно з клавішею &lt;Alt>. Наприклад, для вибору команди Exit (Вихід) потрібно натиснути &lt;Alt> + &lt;E>. Основні відмінності подібного роду комбінацій для швидкого виклику від "гарячих" клавіш полягають у наступному:</p>
+        <p> - такі комбінації складаються з буквеної клавіші і клавіші &lt;Alt>;</p>
+        <p> - вони зустрічаються не тільки в меню, але і в діалогових вікнах;</p>
+        <p> - вони представляють собою контекстне виконання команд. Наприклад, щоб викликати діалогове вікно About Qt (Про Qt) потрібно відкрити меню Menu (Меню) комбінацією &lt;Alt> + &lt;M>, а потім натиснути &lt;Alt> + &lt;A>.</p>
+        <p>Стрілка у команди SubMenu (Підменю) говорить про те, що при виборі цієї команди з'явиться вкладене підменю, в нашому випадку - Test (Тест). Вкладене підменю зручно для того, щоб розвантажити меню, якщо воно містить велику кількість команд. Для зручності і розуміння програми рекомендується, щоб ступінь вкладення не перевищувала двох рівнів.</p>
+        <p>Роздільник - це риса, яка відокремлює одну групу команд від іншої.</p>
+        <p>Команда з прапорцем використовується для надання користувачеві інформації про режим роботи програми та сигналізує про активованої команді меню.</p>
+        <p>Піктограма команди відображає команду меню в графічному вигляді. Це дуже хороший прийом для додаткової ілюстрації дій самої команди.</p>
+        <p>Іноді зустрічаються команди, які не можна виконати в певний момент часу. У таких випадках застосування повинне робити такі команди недоступними, тобто робити їх вибір неможливим. Недоступні команди меню відображаються іншим, як правило - сірим, кольором.</p>
+        <p>Також, пам'ятайте, що в тих випадках, коли команда меню викликає діалогове вікно, її назва повинна містити три точки. Це правило, правда, не поширюється на виклик простих вікон повідомлень.</p>
+        <p>У наступному коді Qt реалізується меню, показане на малюнку вище:</p>
+        <p><ex class="ex">&nbsp;&nbsp; #include &lt;QtGui> &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; #include "img4.xpm" &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; int main(int argc, char** argv) &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; { &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QApplication app(argc, argv); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QMenuBar mnuBar; &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp;  QMenu*   pmnu   = new QMenu("&Menu"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addAction("&About Qt",&app,SLOT(aboutQt()),Qt::CTRL + Qt::Key_Q); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addSeparator(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QAction* pCheckableAction = pmnu->addAction("&CheckableItem"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pCheckableAction->setCheckable(true); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pCheckableAction->setChecked(true); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addAction(QPixmap(img4_xpm), "&IconItem"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QMenu* pmnuSubMenu = new QMenu("&SubMenu", pmnu); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addMenu(pmnuSubMenu); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnuSubMenu->addAction("&Test"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; QAction* pDisabledAction = pmnu->addAction("&DisabledItem"); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pDisabledAction->setEnabled(false); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addSeparator(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; pmnu->addAction("&Exit", &app, SLOT(quit())); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; mnuBar.addMenu(pmnu); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; mnuBar.show(); &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; return app.exec();  &nbsp;&nbsp;</ex></p>
+        <p><ex class="ex">&nbsp;&nbsp; } &nbsp;&nbsp;</ex></p>
+        <p>Щоб створити повноцінне меню, потрібно до кожної команди меню верхнього рівня приєднати відповідне спливаюче меню. За спливаючі меню відповідає клас QMenu. Отже, для створення меню необхідно мати віджет класу QMenuBar - покажчик pmnuBar і, щонайменше, один віджет класу QMenu - покажчик pmnu.</p>
+        <p>Для додавання спливаючого меню до меню верхнього рівня потрібно передати в метод addAction () назва команди. Кожен метод addAction () повертає покажчик на об'єкт дії QAction. Користуючись цим покажчиком можна отримати доступ до команди меню (pCheckableAction). Таким чином, виклик з об'єкта дії методу setCheckable () про надає можливість установки прапорця. Подальший виклик методу setChecked () встановлює стан прапорця. У нашому прикладі в цей метод передається значення true, а це значить, що він буде перебувати під "включеному" стані.</p>
+        <p>Метод addAction () приймає чотири параметри. Перший задає назву команди меню, в якому можна вказати букву для швидкого виклику, поставивши перед нею символ &. Не упускайте з виду того, що команди меню не повинні містити однакових букв, які використовуються для швидкого виклику, адже, в іншому випадку, одна з команд буде недоступна. Другим параметром передається покажчик на об'єкт, що містить слот, який викликається при виборі цієї команди. Сам слот передається третім параметром. Останній параметр задає комбінацію для "гарячої" клавіші. У нашому прикладі, для відображення діалогового вікна AboutQt (Про Qt) використовується комбінація &lt;Ctrl> + &lt;Q>. Натискання цієї комбінації призведе до того ж дії, що і вибір відповідної команди меню, а саме - буде викликаний слот об'єкта додатка aboutQt ().</p>
+        <p>Виклик методу addSeparator () додає роздільник в меню.</p>
+        <p>Покажчиком на об'єкт дії (pDisableAction) можна скористатися також і для того, щоб зробити деякі з команд меню недоступними - за допомогою методу setEnabled ().</p>
+        <p>В метод addAction() первым параметром можно передавать объекты растровых изображений для установки пиктограммы действия команды.</p>
+        </div>
+    </div>
+    <div id="footer">
+       <div id="contacts"><center><h2>Контакти<hr></h2>
+           <a href="http://www.facebook.com/zubykandriy" target="blank"><img src="images/Facebooklogo2.png" class="logo_of_contacts" alt="Facebook" title="Facebook"></a><br>  
+           <a href="https://vk.com/zubyk.andriy" target="blank"><img src="images/vk2.png" class="logo_of_contacts" alt="Vk" title="Vk"></a></center>
+       </div>
+       <div id="other"><center><h2>IDE<hr></h2>
+       <a href="https://www.visualstudio.com/ru/downloads/?rr=https%3A%2F%2Fwww.google.com.ua%2F" target="blank"><img src="images/VS.png" class="logo_of_other" alt="Visual Studio" title="Visual Studio"></a><br>
+       <a href="https://www.qt.io/download" target="blank"><img src="images/Qt2.png" class="logo_of_other" alt="Qt Creator" title="Qt Creator"></a></center>
+       </div>
+       <div id="signature"><center><p>Зубик Андрій &copy; 2018<br><span class="hp"><img src="images/logo_c.svg"> Довідник С++/Qt <img src="images/logo_qt2.png"></span></p></center></div>
+    </div>
+ </div>
+</body>
+</html>
